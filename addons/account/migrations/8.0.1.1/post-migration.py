@@ -35,7 +35,8 @@ def update_link_to_moves(cr):
     rows = cr.fetchall()
     for k, v in groupby(rows, key=lambda r: r[0]):
         v = list(v)
-        assert len(v) == 1
+        # TODO FIXME if only one line in BK
+        #assert len(v) == 1
         openupgrade.logged_query(
             cr,
             '''UPDATE account_bank_statement_line
