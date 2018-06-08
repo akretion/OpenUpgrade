@@ -20,6 +20,9 @@ renamed_modules = {
     'sale_delivery_block': 'sale_stock_picking_blocking',
     # OCA/server-tools:
     'mail_log_messages_to_process': 'mail_log_message_to_process',
+    # Akretion section : Use with merge
+    'account_invoice_product_supplier_price_update':
+        'account_invoice_supplierinfo_update',
 }
 
 renamed_models = {
