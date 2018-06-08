@@ -23,6 +23,9 @@ renamed_modules = {
     # Akretion section : Use with merge
     'account_invoice_product_supplier_price_update':
         'account_invoice_supplierinfo_update',
+    'web_sheet_full_width_selective': 'web_sheet_full_width',
+    'sale_payment_method_automatic_workflow':
+        'sale_automatic_workflow_payment_mode',
 }
 
 renamed_models = {
