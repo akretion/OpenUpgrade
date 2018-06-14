@@ -101,7 +101,7 @@ class Graph(dict):
                 info['depends'].extend(forced_deps.get(module, []))
                 packages.append((module, info)) # TODO directly a dict, like in get_modules_with_version
             elif module != 'studio_customization':
-                _logger.warning('module %s: not installable, skipped', module)
+                _logger.debug('module %s: not installable, skipped', module)
 
         dependencies = dict([(p, info['depends']) for p, info in packages])
         current, later = set([p for p, info in packages]), set()
