@@ -790,6 +790,9 @@ class AccountTax(models.Model):
                 continue
 
             tax_amount = tax._compute_amount(base, price_unit, quantity, product, partner)
+            if not tax_amount:
+                print "ERROR NO TAX AMOUNT", tax.id
+                tax_amount = 0.0
             if not round_tax:
                 tax_amount = round(tax_amount, prec)
             else:
