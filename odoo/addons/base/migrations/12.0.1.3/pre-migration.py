@@ -9,11 +9,13 @@ from openupgradelib import openupgrade
 model_renames = [
     ('product.uom', 'uom.uom'),
     ('product.uom.categ', 'uom.category'),
+    ('stock.incoterms', 'account.incoterms'),
 ]
 
 table_renames = [
     ('product_uom', 'uom_uom'),
     ('product_uom_categ', 'uom_category'),
+    ('stock_incoterms', 'account_incoterms'),
 ]
 
 xmlid_renames = [
