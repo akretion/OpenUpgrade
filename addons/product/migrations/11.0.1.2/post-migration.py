@@ -32,7 +32,9 @@ def map_product_tmpl_id_to_product_id(cr):
             # 'copy' existing product_packaging for additional
             # product_product records
             for p in product_rows[1:]:
-                fields = values = column_names
+#                fields = values = column_names
+                fields = values = list(filter(lambda x: x != 'barcode',
+                                              column_names))
                 cr.execute("""
                    INSERT INTO product_packaging(%s)
                    SELECT %s
