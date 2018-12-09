@@ -893,6 +893,8 @@ class MailThread(models.AbstractModel):
                               discussions
         """
 
+        print("SKIPP MSG")
+        return []
         assert isinstance(route, (list, tuple)), 'A route should be a list or a tuple'
         assert len(route) == 5, 'A route should contain 5 elements: model, thread_id, custom_values, uid, alias record'
 
