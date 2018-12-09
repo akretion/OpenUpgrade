@@ -119,6 +119,7 @@ class ir_cron(models.Model):
         :param cron_cr: cursor holding lock on the cron job row, to use to update the next exec date,
             must not be committed/rolled back!
         """
+        return True # FIXME
         try:
             with api.Environment.manage():
                 cron = api.Environment(job_cr, job['user_id'], {})[cls._name]
