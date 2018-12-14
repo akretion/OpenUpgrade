@@ -274,8 +274,8 @@ class IrTranslation(models.Model):
         # Add separate md5 index on src (no size limit on values, and good performance).
         tools.create_index(self._cr, 'ir_translation_src_md5', self._table, ['md5(src)'])
         # Cover 'model_terms' type
-        tools.create_unique_index(self._cr, 'ir_translation_unique', self._table,
-                                  ['type', 'name', 'lang', 'res_id', 'md5(src)'])
+#        tools.create_unique_index(self._cr, 'ir_translation_unique', self._table,
+#                                  ['type', 'name', 'lang', 'res_id', 'md5(src)'])
         if not tools.index_exists(self._cr, 'ir_translation_code_unique'):
             self._cr.execute("CREATE UNIQUE INDEX ir_translation_code_unique ON ir_translation (type, lang, md5(src)) WHERE type = 'code'")
         if not tools.index_exists(self._cr, 'ir_translation_model_unique'):
