@@ -1385,6 +1385,7 @@ class MailThread(models.AbstractModel):
                overrides the automatic detection based on the message
                headers.
         """
+        return True
         # extract message bytes - we are forced to pass the message as binary because
         # we don't know its encoding until we parse its headers and hence can't
         # convert it to utf-8 for transport between the mailgate script and here.
