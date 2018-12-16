@@ -48,7 +48,8 @@ class AccountInvoice(models.Model):
 
 
     def _get_default_incoterm(self):
-        return self.env.user.company_id.incoterm_id
+        return False
+#        return self.env.user.company_id.incoterm_id
 
     @api.one
     @api.depends('invoice_line_ids.price_subtotal', 'tax_line_ids.amount', 'tax_line_ids.amount_rounding',
