@@ -155,7 +155,7 @@ def migrate(env, version):
     fill_account_chart_template_account_code_prefix(cr)
     fill_account_payment_partner_bank_account_id(cr)
     fill_account_journal_alias_id(env)
-    fill_account_invoice_line_display_type(cr)
+#    fill_account_invoice_line_display_type(cr)
     update_res_company_account_setup_steps_states(cr)
     env['account.group']._parent_store_compute()
     openupgrade.load_data(
