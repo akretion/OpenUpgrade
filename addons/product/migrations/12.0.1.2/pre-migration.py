@@ -3,6 +3,9 @@
 from openupgradelib import openupgrade
 
 _column_renames = {
+    'product_attribute': [
+        ('create_variant', None),
+    ],
     'product_attribute_price': [
         ('value_id', 'product_attribute_value_id'),
     ],
