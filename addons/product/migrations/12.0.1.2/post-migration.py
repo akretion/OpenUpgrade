@@ -9,7 +9,7 @@ def map_product_attribute_create_variant(cr):
         openupgrade.get_legacy_name('create_variant'),
         'create_variant',
         [(False, 'no_variant'),
-         (None, 'no_variant'),
+#         (None, 'no_variant'),
          (True, 'always'),
          ],
         table='product_attribute', write='sql')
