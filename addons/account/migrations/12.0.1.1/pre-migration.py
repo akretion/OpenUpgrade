@@ -27,13 +27,13 @@ _column_renames = {
 #    ],
 }
 
-#_table_renames = [
-#    ('stock_incoterms', 'account_incoterms')
-#]
+_table_renames = [
+    ('stock_incoterms', 'account_incoterms')
+]
 
-#_model_renames = [
-#    ('stock.incoterms', 'account.incoterms')
-#]
+_model_renames = [
+    ('stock.incoterms', 'account.incoterms')
+]
 
 _field_renames = [
     ('res.config.settings', 'res_config_settings', 'group_show_price_subtotal',
@@ -55,8 +55,8 @@ xmlid_renames = [
 @openupgrade.migrate(use_env=True)
 def migrate(env, version):
     cr = env.cr
-#    openupgrade.rename_tables(cr, _table_renames)
-#    openupgrade.rename_models(cr, _model_renames)
+    openupgrade.rename_tables(cr, _table_renames)
+    openupgrade.rename_models(cr, _model_renames)
     openupgrade.copy_columns(cr, column_copies)
     openupgrade.rename_columns(cr, _column_renames)
 #    openupgrade.rename_xmlids(cr, xmlid_renames)
