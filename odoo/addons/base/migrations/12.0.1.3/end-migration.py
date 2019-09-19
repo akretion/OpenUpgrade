@@ -39,7 +39,10 @@ def fork_off_system_user(env):
     partner, and user system gets a new partner. """
     user_root = env.ref('base.user_root')
     partner_admin = env.ref('base.partner_admin')
-    partner_root = env.ref('base.partner_admin').copy({'name': 'System'})
+    partner_root = env.ref('base.partner_admin').copy({
+        'name': 'System',
+        'email': 'contact@akretion.com'
+        })
     login = user_root.login
     user_root.login = '__system__'
     user_admin = env.ref('base.user_root').copy({
