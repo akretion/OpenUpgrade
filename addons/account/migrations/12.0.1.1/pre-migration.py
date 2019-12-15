@@ -129,8 +129,9 @@ def migrate(env, version):
     openupgrade.rename_xmlids(cr, xmlid_renames)
     if openupgrade.table_exists(cr, 'sale_order'):
         openupgrade.rename_fields(env, _field_renames_sale)
-    if openupgrade.table_exists(cr, 'sale_layout_category'):
-        fill_account_invoice_line_sections(cr)
+    # TODO we should do a better test
+    #if openupgrade.table_exists(cr, 'sale_layout_category'):
+    #    fill_account_invoice_line_sections(cr)
     if openupgrade.table_exists(cr, 'account_move_reverse'):
         # module account_reversal
         openupgrade.rename_fields(env, _field_renames_account_reversal)
