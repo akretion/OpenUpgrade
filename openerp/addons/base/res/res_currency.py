@@ -107,7 +107,7 @@ class res_currency(osv.osv):
     @api.v8
     def round(self, amount):
         """ Return `amount` rounded according to currency `self`. """
-        return float_round(amount, precision_rounding=self.rounding)
+        return float_round(amount or 0.0, precision_rounding=self.rounding)
 
     @api.v7
     def round(self, cr, uid, currency, amount):

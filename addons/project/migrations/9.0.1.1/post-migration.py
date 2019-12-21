@@ -39,10 +39,10 @@ def migrate(cr, version):
     map_priority(cr)
     map_template_state(cr)
     copy_user_id(cr)
-    openupgrade.convert_field_to_html(
-        cr, 'project_task', openupgrade.get_legacy_name('description'),
-        'description'
-    )
+#    openupgrade.convert_field_to_html(
+#        cr, 'project_task', openupgrade.get_legacy_name('description'),
+#        'description'
+#    )
     openupgrade.load_data(
         cr, 'project', 'migrations/9.0.1.1/noupdate_changes.xml',
     )
