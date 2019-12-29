@@ -39,7 +39,12 @@ def fork_off_system_user(env):
     partner, and user system gets a new partner. """
     user_root = env.ref('base.user_root')
     partner_admin = env.ref('base.partner_admin')
-    partner_root = env.ref('base.partner_admin').copy({'name': 'System'})
+    root_vals = {
+        "name": "System",
+        "email": partner_admin.email
+        }
+    partner_admin.email = "root@example.com"
+    partner_root = env.ref('base.partner_admin').copy(root_vals)
     login = user_root.login
     user_root.login = '__system__'
     user_admin = env.ref('base.user_root').copy({
@@ -56,11 +61,7 @@ def fork_off_system_user(env):
         "FROM res_users ru2 WHERE ru2.id = %s AND ru.id = %s",
         (user_root.id, user_admin.id),
     )
-    user_root.write({
-        'partner_id': partner_root.id,
-        'email': partner_admin.email,
-    })
-    partner_admin.email = 'root@example.com'
+    user_root.partner_id = partner_root.id
     env.cr.execute(
         """ UPDATE ir_model_data SET res_id = %s
         WHERE module = 'base' AND name = 'user_admin'""", (user_admin.id,))
