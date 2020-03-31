@@ -564,14 +564,18 @@ def fill_move_taxes(env):
                     },
                 )
                 row_tax = env.cr.fetchone()
+                print(row_name[0], type(row_name[0]))
                 if row_tax[0] == 1:
                     openupgrade.logged_query(
                         env.cr,
                         """UPDATE account_move_line
                         SET tax_line_id = %s
                         WHERE tax_code_id = %s
-                        AND name = %s
-                        """, (row_tax[1], tax_code_id, row_name[0])
+                        AND name LIKE %s
+                        """, (row_tax[1],
+                            tax_code_id,
+                            row_name[0].encode("ascii", "replace").replace("?", "_")
+                            )
                     )
         # BASE AMOUNT
         env.cr.execute(
