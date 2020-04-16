@@ -2411,7 +2411,9 @@ class BaseModel(MetaModel('DummyModel', (object,), {'_register': False})):
 
         # 2. add manual fields
         if self.pool._init_modules:
-            self.env['ir.model.fields']._add_manual_fields(self)
+            # Do not take care of manual field during migration process
+            #self.env['ir.model.fields']._add_manual_fields(self)
+            pass
 
         # 3. make sure that parent models determine their own fields, then add
         # inherited fields to cls
