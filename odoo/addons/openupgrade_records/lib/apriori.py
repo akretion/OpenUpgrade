@@ -11,6 +11,8 @@ renamed_modules = {
     # connector and queue_job. We need to do this to correct upgrade both
     # modules.
     'connector': 'queue_job',
+    # OCA/connector-magento
+    'magentoerpconnect': 'connector_magento',
     # OCA/e-commerce
     'website_sale_qty': 'website_sale_price_tier',
     # OCA/hr
@@ -41,6 +43,7 @@ merged_modules = [
     ('account_full_reconcile', 'account'),
     ('mail_tip', 'mail'),
     ('mrp_operations', 'mrp'),
+    ('product_uos', 'sale'),
     ('project_timesheet', 'hr_timesheet'),
     ('sale_service', 'sale_timesheet'),
     ('share', 'base'),
@@ -61,6 +64,8 @@ merged_modules = [
     ('website_sale_b2c', 'sale'),  # used groups are in sale
     # OCA/manufacture
     ('mrp_production_unreserve', 'mrp'),
+    # OCA/pos
+    ('pos_invoice_journal', 'point_of_sale'),
     # OCA/purchase-workflow
     ('purchase_fiscal_position_update', 'purchase'),
     # OCA/sale-workflow
