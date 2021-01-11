@@ -20,6 +20,8 @@ renamed_modules = {
     'crm_sector': 'crm_industry',
     # OCA/account-payment
     'account_due_list_aging_comments': 'account_due_list_aging_comment',
+    # OCA/l10n-netherlands:
+    'l10n_nl_intrastat': 'l10n_nl_tax_statement_icp',
     # OCA/partner-contact
     'partner_sector': 'partner_industry_secondary',
     'partner_street_number': 'base_address_extended',
@@ -115,6 +117,9 @@ merged_modules = {
     'web_widget_domain_v11': 'web',
     # OCA/website
     'website_seo_redirection': 'website',
+    # OCA/bank-statement-import
+    'account_bank_statement_import_camt':
+    'account_bank_statement_import_camt_oca',
 }
 
 renamed_models = {

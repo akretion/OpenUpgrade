@@ -16,6 +16,7 @@
 # Massimo Bianchi <bianchi.massimo@gmail.com>, 2018
 # Paolo Valier, 2018
 # Léonie Bouchat <lbo@odoo.com>, 2019
+# Lorenzo Battistini <lb@takobi.online>, 2020
 # Sergio Zanchetta <primes2h@gmail.com>, 2020
 # 
 msgid ""
@@ -238,12 +239,12 @@ msgstr "Configurazione"
 #: model:ir.actions.act_window,name:lunch.lunch_cashmove_action_control_accounts
 #: model:ir.ui.menu,name:lunch.lunch_cashmove_menu_control_accounts
 msgid "Control Accounts"
-msgstr ""
+msgstr "Controlla conti"
 
 #. module: lunch
 #: model:ir.actions.act_window,name:lunch.lunch_order_line_action_control_suppliers
 msgid "Control Vendors"
-msgstr ""
+msgstr "Controlla fornitori"
 
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_alert_create_uid
@@ -313,7 +314,7 @@ msgstr "Visualizza Nome"
 #: code:addons/lunch/static/src/xml/lunch.xml:7
 #, python-format
 msgid "Don't forget the alerts displayed in the reddish area"
-msgstr ""
+msgstr "Non dimenticare gli avvisi mostrati nell'area rossastra"
 
 #. module: lunch
 #: model:ir.ui.menu,name:lunch.lunch_cashmove_menu_payment
@@ -780,7 +781,7 @@ msgstr "Seleziona il tuo ordine"
 #. module: lunch
 #: model:ir.ui.view,arch_db:lunch.view_lunch_order_line_lucky
 msgid "Select your vendor"
-msgstr ""
+msgstr "Seleziona il tuo venditore"
 
 #. module: lunch
 #: selection:lunch.alert,alert_type:0
@@ -904,7 +905,7 @@ msgstr "Il tuo conto"
 #. module: lunch
 #: model:ir.ui.menu,name:lunch.lunch_cashmove_menu_form
 msgid "Your Lunch Account"
-msgstr ""
+msgstr "Il tuo conto"
 
 #. module: lunch
 #: model:ir.actions.act_window,name:lunch.lunch_order_line_action
@@ -917,6 +918,7 @@ msgstr "I tuoi Ordini"
 #, python-format
 msgid "Your favorite meals will be created based on your last orders."
 msgstr ""
+"I tuoi pasti preferiti verranno creati basandosi sui tuoi ultimi ordini."
 
 #. module: lunch
 #: model:ir.ui.view,arch_db:lunch.lunch_cashmove_view_form

@@ -355,6 +355,9 @@ def load_modules(db, force_demo=False, status=None, update_module=False):
     cr = db.cursor()
     try:
         if not odoo.modules.db.is_initialized(cr):
+            if not update_module:
+                _logger.error("Database %s not initialized, you can force it with `-i base`", cr.dbname)
+                return
             _logger.info("init db")
             odoo.modules.db.initialize(cr)
             update_module = True # process auto-installed modules
@@ -461,6 +464,12 @@ def load_modules(db, force_demo=False, status=None, update_module=False):
         migrations = odoo.modules.migration.MigrationManager(cr, graph)
         for package in graph:
             migrations.migrate_module(package, 'end')
+
+        # STEP 3.6: warn about missing NOT NULL constraints
+        for (table, column), err_msg in registry._notnull_errors.items():
+            msg = "Table %r: column %r: unable to set constraint NOT NULL\n%s"
+            _logger.warning(msg, table, column, err_msg)
+        registry._notnull_errors.clear()
 
         # STEP 4: Finish and cleanup installations
         if processed_modules:

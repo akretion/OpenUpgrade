@@ -71,6 +71,7 @@ db_list = http.db_list
 
 db_monodb = http.db_monodb
 
+def clean(name): return name.replace('\x3c', '')
 def serialize_exception(f):
     @functools.wraps(f)
     def wrap(*args, **kwargs):
@@ -1102,10 +1103,10 @@ class Binary(http.Controller):
         try:
             data = ufile.read()
             args = [len(data), ufile.filename,
-                    ufile.content_type, base64.b64encode(data)]
+                    ufile.content_type, pycompat.to_text(base64.b64encode(data))]
         except Exception as e:
             args = [False, str(e)]
-        return out % (json.dumps(callback), json.dumps(args))
+        return out % (json.dumps(clean(callback)), json.dumps(args))
 
     @http.route('/web/binary/upload_attachment', type='http', auth="user")
     @serialize_exception
@@ -1138,11 +1139,11 @@ class Binary(http.Controller):
                 _logger.exception("Fail to upload attachment %s" % ufile.filename)
             else:
                 args.append({
-                    'filename': filename,
+                    'filename': clean(filename),
                     'mimetype': ufile.content_type,
                     'id': attachment.id
                 })
-        return out % (json.dumps(callback), json.dumps(args))
+        return out % (json.dumps(clean(callback)), json.dumps(args))
 
     @http.route([
         '/web/binary/company_logo',
@@ -1372,6 +1373,7 @@ class Export(http.Controller):
 
 class ExportFormat(object):
     raw_data = False
+    max_rows = None
 
     @property
     def content_type(self):
@@ -1402,6 +1404,8 @@ class ExportFormat(object):
 
         Model = request.env[model].with_context(import_compat=import_compat, **params.get('context', {}))
         records = Model.browse(ids) or Model.search(domain, offset=0, limit=False, order=False)
+        if self.max_rows and len(records) > self.max_rows:
+            raise UserError(_('There are too many records (%s records, limit: %s) to export as this format. Consider splitting the export.') % (len(records), self.max_rows))
 
         if not Model._is_an_ordinary_table():
             fields = [field for field in fields if field['name'] != 'id']
@@ -1455,6 +1459,7 @@ class CSVExport(ExportFormat, http.Controller):
 class ExcelExport(ExportFormat, http.Controller):
     # Excel needs raw data to correctly handle numbers and date values
     raw_data = True
+    max_rows = 65535
 
     @http.route('/web/export/xls', type='http', auth="user")
     @serialize_exception
@@ -1469,7 +1474,7 @@ class ExcelExport(ExportFormat, http.Controller):
         return base + '.xls'
 
     def from_data(self, fields, rows):
-        if len(rows) > 65535:
+        if len(rows) > self.max_rows:
             raise UserError(_('There are too many rows (%s rows, limit: 65535) to export as Excel 97-2003 (.xls) format. Consider splitting the export.') % len(rows))
 
         workbook = xlwt.Workbook()

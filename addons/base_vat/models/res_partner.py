@@ -401,3 +401,23 @@ class ResPartner(models.Model):
             return True
 
         return False
+
+    def check_vat_ua(self, vat):
+        res = []
+        for partner in self:
+            if partner.commercial_partner_id.country_id.code == 'MX':
+                if len(vat) == 10:
+                    res.append(True)
+                else:
+                    res.append(False)
+            elif partner.commercial_partner_id.is_company:
+                if len(vat) == 12:
+                    res.append(True)
+                else:
+                    res.append(False)
+            else:
+                if len(vat) == 10 or len(vat) == 9:
+                    res.append(True)
+                else:
+                    res.append(False)
+        return all(res)

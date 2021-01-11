@@ -9,7 +9,9 @@
 # Ladislav Tomm <tomm@helemik.cz>, 2018
 # Michal Veselý <michal@veselyberanek.net>, 2019
 # Martin Trigaux, 2019
-# trendspotter <j.podhorecky@volny.cz>, 2020
+# Rastislav Brencic <rastislav.brencic@azet.sk>, 2020
+# trendspotter, 2020
+# karolína schusterová <karolina.schusterova@vdp.sk>, 2020
 # 
 msgid ""
 msgstr ""
@@ -17,7 +19,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-03 15:05+0000\n"
 "PO-Revision-Date: 2017-09-20 10:13+0000\n"
-"Last-Translator: trendspotter <j.podhorecky@volny.cz>, 2020\n"
+"Last-Translator: karolína schusterová <karolina.schusterova@vdp.sk>, 2020\n"
 "Language-Team: Czech (https://www.transifex.com/odoo/teams/41243/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -5923,6 +5925,8 @@ msgid ""
 "\n"
 "This widget allows to display gauges using d3 library.\n"
 msgstr ""
+"\n"
+"Tento widget umožňuje zobrazit měřidla pomocí knihovny d3.\n"
 
 #. module: base
 #: model:ir.module.module,description:base.module_product_expiry
@@ -5940,6 +5944,18 @@ msgid ""
 "\n"
 "Also implements the removal strategy First Expiry First Out (FEFO) widely used, for example, in food industries.\n"
 msgstr ""
+"\n"
+"Sledujte různá data produktů a výrobních šarží.\n"
+"======================================================\n"
+"\n"
+"Lze sledovat následující data:\n"
+"-------------------------------\n"
+"- konec trvanlivosti\n"
+"- datum minimální trvanlivosti\n"
+"- datum vyřazení\n"
+"- datum výstrahy\n"
+"\n"
+"Také implementuje strategii odstraňování First Expiry First Out (FEFO) široce používanou například v potravinářském průmyslu.\n"
 
 #. module: base
 #: model:ir.module.module,description:base.module_transifex
@@ -6255,6 +6271,11 @@ msgid ""
 "Works with Worldline keys version 2.0, contains implementation of\n"
 "payments acquirer using Worldline SIPS."
 msgstr ""
+"\n"
+"Worldline SIPS Payment Acquirer pro online platby\n"
+"\n"
+"Pracuje s klíči Worldline verze 2.0, obsahuje implementaci\n"
+"příjemce plateb pomocí Worldline SIPS."
 
 #. module: base
 #: code:addons/base/ir/ir_ui_view.py:1054
@@ -6280,6 +6301,8 @@ msgid ""
 " another model requires the record being deleted. If possible, archive it "
 "instead."
 msgstr ""
+"jiný model vyžaduje vymazání záznamu. Pokud je to možné, místo toho jej "
+"archivujte."
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.res_lang_form
@@ -7201,7 +7224,7 @@ msgstr "Modul pro testování API."
 #. module: base
 #: model:ir.module.module,description:base.module_test_rpc
 msgid "A module to test the RPC requests."
-msgstr ""
+msgstr "Modul pro testování požadavků RPC."
 
 #. module: base
 #: model:ir.module.module,description:base.module_test_uninstall
@@ -11002,7 +11025,7 @@ msgstr "Model dokumentu"
 #: code:addons/models.py:2888
 #, python-format
 msgid "Document type:"
-msgstr ""
+msgstr "Typ dokumentu:"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_website_forum_doc
@@ -11056,7 +11079,7 @@ msgstr "Dr."
 #: model:ir.module.module,shortdesc:base.module_stock_dropshipping
 #: model:ir.module.module,summary:base.module_stock_dropshipping
 msgid "Drop Shipping"
-msgstr ""
+msgstr "Přepravní služba"
 
 #. module: base
 #: code:addons/base/res/res_company.py:18
@@ -16712,6 +16735,52 @@ msgid ""
 "manufacturing operations.\n"
 "\n"
 msgstr ""
+"Plánování výrobních zdrojů Odoo\n"
+"------------------------------------\n"
+"\n"
+"Správa kusovníku, plánování výrobních objednávek, sledování pracovních objednávek pomocí Odoo <a href=\"https://www.odoo.com/page/manufacturing\">Open Source MRP</a> aplikace.\n"
+"\n"
+"Získejte všechny vaše montážní nebo výrobní operace řízené společností Odoo. Plán výrobní zakázky a pracovní objednávky automaticky. Zkontrolujte navrhované plánování s inteligentním výhledem na kanban a Ganttův diagram. Použijte pokročilou analytiku funkce pro detekci úzkých míst v kapacitách zdrojů a umístění zásob.\n"
+"\n"
+"Efektivně naplánujte výrobní zakázky\n"
+"---------------------------------------------\n"
+"\n"
+"Získejte výrobní zakázky a pracovní objednávky naplánované automaticky na základě vaší objednávky pravidla pro zadávání zakázek, předpokládaná množství a závislá poptávka (poptávka po této části na základě jiné části, která ji konzumuje).\n"
+"\n"
+"Definujte flexibilní kmenová data\n"
+"---------------------------\n"
+"\n"
+"Získejte flexibilitu při vytváření víceúrovňového kusovníku, volitelného směrování, změny verze a fantomový kusovník. BoM můžete použít pro sady nebo pro výrobní zakázky.\n"
+"\n"
+"Získejte flexibilitu ve všech operacích\n"
+"---------------------------------\n"
+"\n"
+"Ručně upravte všechny navrhované operace na jakékoli úrovni postupu. S Odoo vás rigidní systém nebude frustrovat.\n"
+"\n"
+"Naplánujte pracovní příkazy\n"
+"--------------------\n"
+"\n"
+"Zkontrolujte kapacity zdrojů a opravte úzká místa. Definujte rutiny a naplánujte pracovní dobu a kapacitu vašich zdrojů. Rychle identifikujte zdroj\n"
+"požadavků a úzká místa, aby se zajistilo, že vaše výroba splní vaše dodávky\n"
+"naplánovuje termíny.\n"
+"\n"
+"\n"
+"Produktivní uživatelské rozhraní\n"
+"---------------------------\n"
+"\n"
+"Uspořádejte výrobní zakázky a pracovní objednávky tak, jak se vám líbí. Další postup objednávky ze seznamu, ovládejte zobrazení kalendáře a upravujte navrhované plány v Ganttově zobrazení.\n"
+"\n"
+"\n"
+"Analýza zásob a výroby\n"
+"-----------------------------------\n"
+"\n"
+"Sledujte vývoj hodnoty zásob podle úrovně výroby\n"
+"činnosti v průběhu transformačního procesu.\n"
+"\n"
+"Plně integrovaný s operacemi\n"
+"--------------------------------\n"
+"\n"
+"Zajistěte přesné plánování výrobních zdrojů díky plné integraci s prodejem a nákupem aplikací. Integrace účetnictví umožňuje reálný čas účetní ocenění a hlubší zprávy o nákladech a výnosech výrobní operace.\n"
 
 #. module: base
 #: model:ir.module.module,description:base.module_mass_mailing
@@ -18871,6 +18940,56 @@ msgid ""
 "accurate reports on your team's performance.\n"
 "\n"
 msgstr ""
+"Projektový management\n"
+"------------------\n"
+"\n"
+"### Nekonečně flexibilní. Neuvěřitelně snadné použití.\n"
+"\n"
+"\n"
+"Společné řízení projektů Odoo v reálném čase a v <a href=\"https://www.odoo.com/page/project-management\">open source</a> pomáhá vašemu týmu pracovat. Mějte přehled o všem, z odstupu i po minutách, od zákaznické smlouvy po fakturaci.\n"
+"\n"
+"Navrženo tak, aby vyhovovalo vašemu vlastnímu procesu\n"
+"--------------------------------\n"
+"\n"
+"Uspořádejte projekty podle svých vlastních procesů. Práce s úkoly a problémy pomocí zobrazení kanban, plánování úkolů pomocí Ganttova diagramu a kontrola termínů v zobrazení kalendáře. Každý projekt může mít své vlastní etapy, které týmům umožňují optimalizovat jejich práci.\n"
+"\n"
+"Snadné použití\n"
+"-----------\n"
+"\n"
+"Organizujte se tak rychle, jak si jen myslíte. Snadno použitelné rozhraní nevyžaduje učení a každá akce je okamžitá, takže mezi vámi a vaším plynulým produktivním tokem nic nestojí.\n"
+"\n"
+"Spolupracujte\n"
+"-------------\n"
+"\n"
+"### Chaty v reálném čase, sdílení dokumentů, integrace e-mailů\n"
+"\n"
+"Pomocí otevřeného chatování komunikujte se svým týmem nebo zákazníky a sdílejte komentáře a dokumenty o úkolech a problémech. Rychle integrujte diskusi s integrací e-mailu.\n"
+"\n"
+"Promluvte si s ostatními uživateli nebo zákazníky pomocí funkce živého chatu na webu.\n"
+"\n"
+"Kolaborativní psaní\n"
+"---------------------\n"
+"\n"
+"### Síla etherpadu ve vašich úkolech\n"
+"\n"
+"Společně upravujte stejné specifikace nebo zápisy ze schůzky přímo uvnitř aplikace. Integrovaná funkce etherpad umožňuje několika lidem pracovat na stejných úkolech současně.\n"
+"\n"
+"To je velmi efektivní pro skrumážové schůzky, zápisy ze schůzky nebo specifikace komplexu. Každý uživatel má svou vlastní barvu a můžete si projít  celou tvorbu obsahu.\n"
+"\n"
+"Získejte práci\n"
+"-------------\n"
+"\n"
+"Dostávejte upozornění na sledované události a mějte aktuální informace o tom, co vás zajímá. Pomocí okamžitých zelených / červených vizuálních indikátorů můžete procházet, co se stalo a co vyžaduje vaši pozornost.\n"
+"\n"
+"Harmonogramy, smlouvy a fakturace\n"
+"---------------------------------\n"
+"\n"
+"Projekty jsou automaticky integrovány do smluv se zákazníky, což vám umožňuje snadno fakturovat na základě času a materiálů a zaznamenávat časové rozvrhy.\n"
+"\n"
+"Sledujte problémy\n"
+"------------\n"
+"\n"
+"Vyjmenujte problémy, které vznikají v projektu, abyste se mohli lépe zaměřit na jejich řešení. Integrujte interakci se zákazníky u každého problému a získejte přesné zprávy o výkonu vašeho týmu.\n"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_rating_project
@@ -19665,7 +19784,7 @@ msgstr "Svatý Vincent a Grenadiny"
 #. module: base
 #: model:ir.module.module,summary:base.module_hr_contract_salary
 msgid "Salary Package Configurator"
-msgstr ""
+msgstr "Konfigurátor balíkov platov"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_partner_form
@@ -19685,7 +19804,7 @@ msgstr "Prodejní kupón"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_sale_coupon_delivery
 msgid "Sale Coupon Delivery"
-msgstr ""
+msgstr "Doručení prodejního kuponu"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_sale_service_rating
@@ -21445,7 +21564,7 @@ msgstr ""
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_website_sale_taxcloud_delivery
 msgid "TaxCloud and Delivery - Ecommerce"
-msgstr ""
+msgstr "TaxCloud a Delivery - Elektronický obchod"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_account_taxcloud
@@ -21722,6 +21841,9 @@ msgid ""
 "                                    the field must be assigned to each record with a dictionary-like\n"
 "                                    assignment."
 msgstr ""
+"Pole <strong>Vypočítat</strong> je kód Pythonu\n"
+"k výpočtu hodnoty pole na sadě záznamů. Hodnota\n"
+"pole musí být každému záznamu přiřazeno jako položka ve slovníku."
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_model_form
@@ -21778,6 +21900,14 @@ msgstr ""
 #: model:ir.model.fields,help:base.field_ir_model_inherited_model_ids
 msgid "The list of models that extends the current model."
 msgstr "Seznam modelů, které rozšiřují aktuální model."
+
+#. module: base
+#: code:addons/base/ir/ir_model.py:522
+#, python-format
+msgid ""
+"The m2o field %s is required but declares its ondelete policy as being 'set "
+"null'. Only 'restrict' and 'cascade' make sense."
+msgstr ""
 
 #. module: base
 #: model:ir.model.fields,help:base.field_ir_filters_action_id
@@ -22153,7 +22283,7 @@ msgstr ""
 #. module: base
 #: model:ir.module.module,summary:base.module_website_helpdesk_livechat
 msgid "Ticketing, Support, Livechat"
-msgstr ""
+msgstr "Prodej lístků, podpora, živý chat"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_website_helpdesk_slides
@@ -22926,7 +23056,7 @@ msgstr "Použito k přihlášení do systému"
 #. module: base
 #: model:ir.model.fields,help:base.field_res_company_sequence
 msgid "Used to order Companies in the company switcher"
-msgstr ""
+msgstr "Používá se k objednávání společností ve firemním přepínači"
 
 #. module: base
 #: model:ir.model.fields,help:base.field_res_partner_type
@@ -23125,7 +23255,7 @@ msgstr "Celočíselná hodnota"
 #: model:ir.model.fields,field_description:base.field_ir_act_server_fields_lines
 #: model:ir.model.fields,field_description:base.field_ir_cron_fields_lines
 msgid "Value Mapping"
-msgstr ""
+msgstr "Mapování hodnot"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_property_value_reference
@@ -23449,7 +23579,7 @@ msgstr ""
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_website_enterprise
 msgid "Website Enterprise"
-msgstr ""
+msgstr "Webové stránky pro podnikání"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_website_form_project

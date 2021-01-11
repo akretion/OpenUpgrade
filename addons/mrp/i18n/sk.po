@@ -11,6 +11,9 @@
 # Stefan Stieranka <stieranka@itec.sk>, 2018
 # gebri <gebri@inmail.sk>, 2018
 # Jan Prokop, 2019
+# Rastislav Brencic <rastislav.brencic@azet.sk>, 2020
+# Damian Brencic <brencicdamian12313@gmail.com>, 2020
+# karolína schusterová <karolina.schusterova@vdp.sk>, 2020
 # 
 msgid ""
 msgstr ""
@@ -18,7 +21,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-03 15:06+0000\n"
 "PO-Revision-Date: 2017-09-20 10:19+0000\n"
-"Last-Translator: Jan Prokop, 2019\n"
+"Last-Translator: karolína schusterová <karolina.schusterova@vdp.sk>, 2020\n"
 "Language-Team: Slovak (https://www.transifex.com/odoo/teams/41243/sk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -297,7 +300,7 @@ msgstr "Aktívne"
 #. module: mrp
 #: model:ir.model.fields,field_description:mrp.field_mrp_workorder_active_move_line_ids
 msgid "Active Move Line"
-msgstr ""
+msgstr "Linka aktívneho pohybu"
 
 #. module: mrp
 #: model:ir.ui.view,arch_db:mrp.mrp_workcenter_block_wizard_form
@@ -1340,7 +1343,7 @@ msgstr ""
 #. module: mrp
 #: model:ir.ui.view,arch_db:mrp.view_mrp_workcenter_productivity_loss_kanban
 msgid "Is a Blocking Reason?"
-msgstr ""
+msgstr "Je dôvod blokovania?"
 
 #. module: mrp
 #: model:ir.model.fields,field_description:mrp.field_mrp_document_public
@@ -1500,7 +1503,7 @@ msgstr "Zamknúť"
 #: model:ir.model.fields,field_description:mrp.field_mrp_workcenter_productivity_loss_id_8257
 #: model:ir.ui.view,arch_db:mrp.oee_search_view
 msgid "Loss Reason"
-msgstr ""
+msgstr "Dôvod straty"
 
 #. module: mrp
 #: model:ir.model.fields,field_description:mrp.field_mrp_product_produce_line_lot_id
@@ -1697,7 +1700,7 @@ msgstr "Hlavné dáta"
 #. module: mrp
 #: model:ir.model.fields,field_description:mrp.field_res_config_settings_module_mrp_mps
 msgid "Master Production Schedule"
-msgstr ""
+msgstr "Hlavný harmonogram výroby"
 
 #. module: mrp
 #: model:ir.model.fields,field_description:mrp.field_mrp_production_availability
@@ -1984,7 +1987,7 @@ msgstr ""
 #. module: mrp
 #: model:ir.model.fields,help:mrp.field_mrp_workcenter_oee
 msgid "Overall Equipment Effectiveness, based on the last month"
-msgstr ""
+msgstr "Celková účinnosť zariadenia, založená na poslednom mesiaci"
 
 #. module: mrp
 #: model:ir.actions.act_window,help:mrp.mrp_workcenter_productivity_report
@@ -2039,7 +2042,7 @@ msgstr ""
 #. module: mrp
 #: model:ir.model.fields,help:mrp.field_mrp_workcenter_performance
 msgid "Performance over the last month"
-msgstr ""
+msgstr "Výkonnosť za posledný mesiac"
 
 #. module: mrp
 #: model:ir.ui.view,arch_db:mrp.mrp_workcenter_kanban
@@ -2154,7 +2157,7 @@ msgstr "Produkt"
 #. module: mrp
 #: model:ir.model.fields,field_description:mrp.field_res_config_settings_module_mrp_plm
 msgid "Product Lifecycle Management (PLM)"
-msgstr ""
+msgstr "Správa životného cyklu produktu (PLM)"
 
 #. module: mrp
 #: model:ir.actions.act_window,name:mrp.action_mrp_unbuild_moves
@@ -2373,6 +2376,7 @@ msgstr "Suroviny"
 
 #. module: mrp
 #: model:ir.model.fields,field_description:mrp.field_mrp_production_location_src_id
+#: model:ir.model.fields,field_description:mrp.field_mrp_routing_location_id
 msgid "Raw Materials Location"
 msgstr "Umiestnenie surových materiálov"
 
@@ -2448,7 +2452,7 @@ msgstr ""
 #. module: mrp
 #: model:ir.model.fields,field_description:mrp.field_res_config_settings_module_mrp_repair
 msgid "Repair"
-msgstr ""
+msgstr "Oprava"
 
 #. module: mrp
 #: model:ir.ui.view,arch_db:mrp.res_config_settings_view_form
@@ -2561,7 +2565,7 @@ msgstr "Uložiť"
 #. module: mrp
 #: model:ir.ui.view,arch_db:mrp.res_config_settings_view_form
 msgid "Schedule manufacturing orders earlier to avoid delays"
-msgstr ""
+msgstr "Naplánujte si výrobné objednávky skôr, aby ste predišli oneskoreniu"
 
 #. module: mrp
 #: model:ir.ui.view,arch_db:mrp.res_config_settings_view_form
@@ -2921,7 +2925,7 @@ msgstr ""
 #. module: mrp
 #: model:ir.model.fields,help:mrp.field_mrp_document_res_model
 msgid "The database object this attachment will be attached to."
-msgstr ""
+msgstr "Databázový objekt, ku ktorému bude pripojená táto príloha."
 
 #. module: mrp
 #: model:ir.model.fields,help:mrp.field_mrp_production_routing_id
@@ -2942,6 +2946,9 @@ msgid ""
 "mainly used to compute work center costs during operations and to plan "
 "future loads on work centers based on production planning."
 msgstr ""
+"Zoznam operácií na výrobu hotového výrobku. Smerovanie sa používa hlavne na "
+"výpočet nákladov na pracovisku počas operácií a na plánovanie budúcich "
+"nákladov na pracoviskách na základe plánovania výroby."
 
 #. module: mrp
 #: model:ir.model.fields,help:mrp.field_mrp_workorder_qty_produced
@@ -2982,7 +2989,7 @@ msgstr ""
 #. module: mrp
 #: model:ir.model.fields,help:mrp.field_mrp_document_res_id
 msgid "The record id this is attached to."
-msgstr ""
+msgstr "ID záznamu, ku ktorému je pripojený."
 
 #. module: mrp
 #: model:ir.model.fields,help:mrp.field_mrp_routing_workcenter_routing_id
@@ -3336,6 +3343,9 @@ msgid ""
 "is useful if you have long lead time and if you produce based on sales "
 "forecasts."
 msgstr ""
+"Použitie prehľadu MPS na naplánovanie vašich objednávacích a výrobných "
+"operácií je užitočné, ak máte dlhý čas na dodanie a ak vyrábate na základe "
+"prognóz predaja."
 
 #. module: mrp
 #: model:ir.model.fields,field_description:mrp.field_mrp_message_valid_until
@@ -3797,7 +3807,7 @@ msgstr "dni"
 #. module: mrp
 #: model:ir.ui.view,arch_db:mrp.mrp_workcenter_view
 msgid "hour(s)"
-msgstr ""
+msgstr "hodiny"
 
 #. module: mrp
 #: model:ir.ui.view,arch_db:mrp.mrp_routing_workcenter_form_view
@@ -3824,7 +3834,7 @@ msgstr "mrp.bom.line"
 #. module: mrp
 #: model:ir.ui.view,arch_db:mrp.production_message
 msgid "quantity has been updated."
-msgstr ""
+msgstr "množstvo bolo aktualizované."
 
 #. module: mrp
 #: model:ir.model,name:mrp.model_report_mrp_mrp_bom_cost_report

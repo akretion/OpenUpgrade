@@ -23262,6 +23262,14 @@ msgid "The list of models that extends the current model."
 msgstr "Lista modeli które rozszerzają używany model."
 
 #. module: base
+#: code:addons/base/ir/ir_model.py:522
+#, python-format
+msgid ""
+"The m2o field %s is required but declares its ondelete policy as being 'set "
+"null'. Only 'restrict' and 'cascade' make sense."
+msgstr ""
+
+#. module: base
 #: model:ir.model.fields,help:base.field_ir_filters_action_id
 msgid ""
 "The menu action this filter applies to. When left empty the filter applies "
@@ -23631,6 +23639,14 @@ msgstr ""
 "Ten moduł tematyczny przeznaczony jest wyłącznie dla administratora, aby "
 "zachować wsparcie dla motywów Bootswatch, które wcześniej były częścią "
 "modułu witryny w wersji 8.0."
+
+#. module: base
+#: code:addons/base/ir/ir_sequence.py:56
+#, python-format
+msgid ""
+"This transaction wasn't executed because another transaction is already "
+"using the same no-gap sequence. Please try again later."
+msgstr ""
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_res_lang_thousands_sep
