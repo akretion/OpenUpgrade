@@ -33,6 +33,13 @@ def fill_payment_transaction_payment_id(cr):
     )
 
 
+def delete_account_invoice_transaction_rel(env):
+    openupgrade.logged_query(
+        env.cr, """
+        DELETE FROM account_invoice_transaction_rel""",
+    )
+
+
 def fill_invoice_ids(env):
     """Fill invoice_ids field in payment.transaction, and recompute nbr."""
     openupgrade.logged_query(
@@ -68,6 +75,7 @@ def migrate(env, version):
     map_payment_transaction_state(cr)
     fill_payment_transaction_is_processed(cr)
     fill_payment_transaction_payment_id(cr)
+    delete_account_invoice_transaction_rel(env)
     fill_invoice_ids(env)
     fill_missing_acquirers_journals(env)
     openupgrade.load_data(
