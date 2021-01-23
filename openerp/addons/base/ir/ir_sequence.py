@@ -201,6 +201,8 @@ class ir_sequence(models.Model):
     def get_next_char(self, number_next):
         def _interpolate(s, d):
             if s:
+                s = s.replace("dmonth", "month")
+                d['month'] = int(d['month'])
                 return s % d
             return ''
 
