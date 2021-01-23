@@ -55,10 +55,10 @@
           groups="stock.group_production_lot"
           sequence="10"/>
 
-    <menuitem id="menu_mrp_scrap"
+    <!--menuitem id="menu_mrp_scrap"
             name="Scrap"
             parent="menu_mrp_manufacturing"
             action="stock.action_stock_scrap"
-            sequence="25"/>
+            sequence="25"/-->
 
 </odoo>
