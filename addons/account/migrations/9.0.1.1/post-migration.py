@@ -6,6 +6,7 @@
 
 import logging
 import operator
+from unidecode import unidecode
 from openupgradelib import openupgrade, openupgrade_90
 from openerp.modules.registry import RegistryManager
 from psycopg2.extensions import AsIs
@@ -565,13 +566,14 @@ def fill_move_taxes(env):
                 )
                 row_tax = env.cr.fetchone()
                 if row_tax[0] == 1:
+                    name = unidecode(row_name[0])
                     openupgrade.logged_query(
                         env.cr,
                         """UPDATE account_move_line
                         SET tax_line_id = %s
                         WHERE tax_code_id = %s
                         AND name = %s
-                        """, (row_tax[1], tax_code_id, row_name[0])
+                        """, (row_tax[1], tax_code_id, name)
                     )
         # BASE AMOUNT
         env.cr.execute(
@@ -786,7 +788,7 @@ def _fill_account_invoice_tax_taxes_recursive(env, base_code_id, tax_code_id,
                             row_tax[1],
                             original_base_code_id or AsIs('NULL'),
                             original_tax_code_id or AsIs('NULL'),
-                            row_name[0],
+                            unidecode(row_name[0]),
                             row_name[1],
                         )
                     )
