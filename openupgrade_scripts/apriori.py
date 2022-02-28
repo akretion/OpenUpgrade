@@ -30,6 +30,7 @@ renamed_modules = {
     "account_bank_statement_import_save_file": "account_statement_import_save_file",
     "account_bank_statement_import_transfer_move": "account_statement_import_transfer_move",  # noqa: B950
     "account_bank_statement_import_txt_xlsx": "account_statement_import_txt_xlsx",
+    "account_bank_statement_import_online_qonto": "account_statement_import_online_qonto",  # noqa: B950
     # OCA/e-commerce
     "website_sale_attribute_filter_category": "website_sale_product_attribute_filter_category",  # noqa: B950
     # OCA/edi
@@ -87,6 +88,8 @@ merged_modules = {
     "website_event_questions_free_text": "website_event_questions",
     # OCA/margin-analysis
     "sale_order_margin_percent": "sale_margin",
+    # OCA/account-closing
+    "account_cutoff_accrual_base": "account_cutoff_base",
     # OCA/partner-contact
     "base_vat_sanitized": "base_vat",
     "partner_bank_active": "base",
