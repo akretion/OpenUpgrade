@@ -23,6 +23,10 @@ merged_modules = {
 # only used here for upgrade_analysis
 renamed_models = {
     # odoo
+    # mail
+    "mail.notification.web.push": "web.push",
+    "mail.partner.device": "mail.push.device",
+    "mail.shortcode": "mail.canned.response",
     # OCA/...
 }
 
