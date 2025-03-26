@@ -10,7 +10,6 @@ renamed_modules = {
     "website_sale_picking": "website_sale_collect",
     "website_form_project": "website_project",
     # odoo/enterprise
-    "account_accountant": "accountant",
     # OCA/...
 }
 

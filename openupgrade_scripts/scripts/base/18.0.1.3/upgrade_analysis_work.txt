@@ -170,7 +170,7 @@ NEW ir.model.constraint: base.constraint_res_groups_check_api_key_duration
 NEW ir.module.module: base.module_accountant (noupdate)
 DEL ir.module.module: base.module_account_accountant (noupdate)
 
-# DONE: added to renamed_modules in apriori.py
+# DONE: post-migration: if enterprise module was installed, then install new one and remove old xmlid
 
 DEL ir.module.module: base.module_sale_ebay (noupdate)
 DEL ir.module.module: base.module_website_twitter_wall (noupdate)

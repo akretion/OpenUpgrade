@@ -49,7 +49,6 @@ def migrate(cr, version):
     openupgrade.update_module_names(cr, merged_modules.items(), merge_modules=True)
     openupgrade.clean_transient_models(cr)
     openupgrade.rename_xmlids(cr, _renamed_xmlids)
-
     _fix_list_view_type(cr)
     _fix_serbian_res_lang_record(cr)
     _fix_company_layout_background(cr)
