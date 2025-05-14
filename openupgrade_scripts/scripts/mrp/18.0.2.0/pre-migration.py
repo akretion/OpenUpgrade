@@ -41,16 +41,17 @@ def migrate(env, version):
                 "integer",
                 "USING ROUND(produce_delay)::integer",
             )
-            openupgrade.log(
-                env.cr,
-                "MRP",
-                "Altered column type of mrp_bom.produce_delay to integer.",
-            )
-        except Exception as e:
-            openupgrade.log(
-                env.cr,
-                "MRP",
-                "Could not alter column type of mrp_bom.produce_delay: %s. "
-                "Manual check might be needed." % e,
-                level="warning",
-            )
+            # log(
+            #    env.cr,
+            #    "MRP",
+            #    "Altered column type of mrp_bom.produce_delay to integer.",
+            # )
+        except Exception:
+            pass
+            # log(
+            #    env.cr,
+            #    "MRP",
+            #    "Could not alter column type of mrp_bom.produce_delay: %s. "
+            #    "Manual check might be needed." % e,
+            #    level="warning",
+            # )

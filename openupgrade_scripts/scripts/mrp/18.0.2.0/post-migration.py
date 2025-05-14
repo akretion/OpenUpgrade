@@ -1,12 +1,16 @@
-# Copyright 2025 Akretion
-# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
-
+# post-migration.py
+import logging
 
 from openupgradelib import openupgrade
+
+_logger = logging.getLogger(__name__)
 
 
 def _migrate_mrp_documents(env):
     if not openupgrade.table_exists(env.cr, "product_document_mrp_legacy"):
+        _logger.info(
+            "Table product_document_mrp_legacy does not exist, skipping migration."
+        )
         return
 
     # Fetch old mrp_document data: ir_attachment_id, active, priority.
@@ -23,7 +27,8 @@ def _migrate_mrp_documents(env):
     old_docs_data = env.cr.dictfetchall()
 
     if not old_docs_data:
-        openupgrade.drop_tables(env.cr, ["product_document_mrp_legacy"])
+        _logger.info("No data found in product_document_mrp_legacy, dropping table.")
+        env.cr.execute("DROP TABLE IF EXISTS product_document_mrp_legacy;")
         return
 
     # Mapping from old priorities to new sequence values.
@@ -71,10 +76,9 @@ def _migrate_mrp_documents(env):
             if existing_pd.attached_on_mrp != "bom":
                 write_vals["attached_on_mrp"] = "bom"
 
-            # Update sequence if it was the default (10) and new mapping
-            # suggests different,
-            # or if explicitly set priority implies a new sequence different
-            # from current.
+            # Update sequence if it was the default (10) and new mapping suggests
+            # different, or if explicitly set priority implies a new sequence
+            # different from current.
             if (existing_pd.sequence == 10 and sequence_val != 10) or (
                 old_doc_data["priority"] is not None
                 and existing_pd.sequence != sequence_val
@@ -102,35 +106,33 @@ def _migrate_mrp_documents(env):
     if pd_vals_list_create:
         ProductDocument.create(pd_vals_list_create)
 
-    openupgrade.drop_tables(env.cr, ["product_document_mrp_legacy"])
+    _logger.info("Dropping table product_document_mrp_legacy.")
+    env.cr.execute("DROP TABLE IF EXISTS product_document_mrp_legacy;")
     log_message = (
         f"Migrated mrp.document records to product.document: "
         f"{created_count} created, {updated_count} updated."
     )
-    openupgrade.log(env.cr, "MRP", log_message)
+    _logger.info(log_message)
 
 
 def _set_mrp_bom_line_manual_consumption(env):
     # Old logic for mrp.bom.line.manual_consumption (v17):
     # line.manual_consumption = (line.tracking != 'none' or line.operation_id)
-    # `product_id.tracking` (on product.product) is related
-    # to `product_tmpl_id.tracking`.
-    # `product.template.tracking` depends on `is_storable` in v18.
-    # The `stock` module migration scripts handle `type` -> `is_storable`
-    # and adjusts `tracking`. So, reading `product_id.tracking` here should give
-    # the v18-compatible value. `mrp.bom.line` has a `tracking` field related to
-    # `product_id.tracking`.
+    # We need to join with product_product to access the 'tracking' field.
     openupgrade.logged_query(
         env.cr,
         """
-        UPDATE mrp_bom_line
+        UPDATE mrp_bom_line AS mbl
         SET manual_consumption = TRUE
-        WHERE (tracking IS NOT NULL AND tracking != 'none') OR operation_id IS NOT NULL;
+        FROM product_product AS pp
+        WHERE mbl.product_id = pp.id
+          AND ((pp.tracking IS NOT NULL AND pp.tracking != 'none') OR mbl.operation_id
+          IS NOT NULL);
         """,
-        reason=(
-            "Set manual_consumption on mrp.bom.line based on v17 logic "
-            "(tracked product or specific operation)."
-        ),
+    )
+    _logger.info(
+        "Set manual_consumption on mrp.bom.line based on v17 logic "
+        "(tracked product or specific operation)."
     )
 
 
