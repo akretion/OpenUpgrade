@@ -107,6 +107,7 @@ _xmlids_renames = [
     ("l10n_fr.tax_report_23_formula", "l10n_fr_account.tax_report_23_formula"),
     ("l10n_fr.tax_report_24_tag", "l10n_fr_account.tax_report_24_tag"),
     ("l10n_fr.tax_report_25_formula", "l10n_fr_account.tax_report_25_formula"),
+    ("l10n_fr.tax_report_26_external_tag", "l10n_fr_account.tax_report_26_external_tag"),
     ("l10n_fr.tax_report_27_carryover", "l10n_fr_account.tax_report_27_carryover"),
     ("l10n_fr.tax_report_27_formula", "l10n_fr_account.tax_report_27_formula"),
     (
