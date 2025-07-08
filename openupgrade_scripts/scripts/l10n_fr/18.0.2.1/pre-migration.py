@@ -535,6 +535,7 @@ _xmlids_renames = [
     ("l10n_fr.tax_report_23", "l10n_fr_account.tax_report_23"),
     ("l10n_fr.tax_report_24", "l10n_fr_account.tax_report_24"),
     ("l10n_fr.tax_report_25", "l10n_fr_account.tax_report_25"),
+    ("l10n_fr.tax_report_26", "l10n_fr_account.tax_report_26"),
     ("l10n_fr.tax_report_27", "l10n_fr_account.tax_report_27"),
     ("l10n_fr.tax_report_28", "l10n_fr_account.tax_report_28"),
     ("l10n_fr.tax_report_29", "l10n_fr_account.tax_report_29"),
